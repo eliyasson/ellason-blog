@@ -25,6 +25,12 @@ const Home = () => {
         color: "Red"
     });
 
+    const updatedColor = () => {
+        setCar(previousState => {
+            return { ...previousState, color: "blue"}
+        });
+    }
+
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
         setBlogs(newBlogs);
@@ -42,7 +48,10 @@ const Home = () => {
             <p>{ name }</p>
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Eliyas')} title="Eliyas's blogs"/> */}
 
-            <p> My car model is { car.model } </p>
+            <p> It is a {car.color} {car.model} from {car.year}. </p>
+            <button type = "button" onClick={updatedColor}>Blue</button>
+
+        
         </div>
 
      );
