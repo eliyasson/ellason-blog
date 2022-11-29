@@ -18,6 +18,13 @@ const Home = () => {
 
     const [name, setName] = useState('Mario');
 
+    const [car, setCar] = useState({
+        brand: "Ford",
+        model: "Mustang",
+        year: "1999",
+        color: "Red"
+    });
+
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
         setBlogs(newBlogs);
@@ -34,6 +41,8 @@ const Home = () => {
             <button onClick={() => setName('Tara')}>Change name</button>
             <p>{ name }</p>
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Eliyas')} title="Eliyas's blogs"/> */}
+
+            <p> My car model is { car.model } </p>
         </div>
 
      );
