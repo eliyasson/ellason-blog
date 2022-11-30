@@ -27,9 +27,6 @@ const Home = () => {
             <BlogList blogs={blogs} title="All Blogs!" handleDelete = {handleDelete}/>
             <button onClick={() => setName('Tara')}>Change name</button>
             <p>{ name }</p>
-            {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Eliyas')} title="Eliyas's blogs"/> */}
-
-        
         </div>
 
      );
