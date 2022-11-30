@@ -18,18 +18,6 @@ const Home = () => {
 
     const [name, setName] = useState('Mario');
 
-    const [car, setCar] = useState({
-        brand: "Ford",
-        model: "Mustang",
-        year: "1999",
-        color: "Red"
-    });
-
-    const updatedColor = () => {
-        setCar(previousState => {
-            return { ...previousState, color: "blue"}
-        });
-    }
 
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
@@ -47,9 +35,6 @@ const Home = () => {
             <button onClick={() => setName('Tara')}>Change name</button>
             <p>{ name }</p>
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'Eliyas')} title="Eliyas's blogs"/> */}
-
-            <p> It is a {car.color} {car.model} from {car.year}. </p>
-            <button type = "button" onClick={updatedColor}>Blue</button>
 
         
         </div>
