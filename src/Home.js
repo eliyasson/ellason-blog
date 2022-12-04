@@ -19,6 +19,10 @@ const Home = () => {
     return ( 
         <div className="home">
             {blogs && <BlogList blogs={blogs} title="All Blogs!" /> }
+            {data &&
+            data.map((item) => {
+            return <p key={item.id}>{item.title}</p>;
+            })}
         </div>
 
      );
