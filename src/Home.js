@@ -5,12 +5,11 @@ const Home = () => {
    const [blogs, setBlogs] =useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8000/blogs')
+        fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res => {
             return res.json();
         })
         .then(data => {
-            console.log(data);
             setBlogs(data);
         })
         
@@ -19,10 +18,7 @@ const Home = () => {
     return ( 
         <div className="home">
             {blogs && <BlogList blogs={blogs} title="All Blogs!" /> }
-            {data &&
-            data.map((item) => {
-            return <p key={item.id}>{item.title}</p>;
-            })}
+            
         </div>
 
      );
